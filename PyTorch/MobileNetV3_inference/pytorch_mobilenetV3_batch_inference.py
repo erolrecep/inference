@@ -18,10 +18,10 @@ import torch
 
 sys.path.append(os.getcwd())
 
-from utils import list_images, preprocess_image
+from utils import list_images
 from dataset import MyDataLoader
 
-np.random.seed(1453)
+np.random.seed(1453)  # TODO: Check if PyTorch has anything special for random seed setting
 torch.backends.cudnn.benchmark = True
 
 # construct the argument parse and parse the arguments
@@ -47,7 +47,11 @@ batch_size = 32
 
 dataloader = MyDataLoader(images_path, batch_size)
 
+# TODO: Write experiment results to a csv file (make sure each experiment have their own experiment folder)
+# TODO: Grad-Cam results are also going to be in this folder
 with torch.no_grad():
+
+    # TODO: I should record inference time for each batch
     for batch, paths in dataloader:
         # Move the batch of images to the device
         batch = batch.to(device)
@@ -65,3 +69,5 @@ with torch.no_grad():
         # Print the predicted labels and the corresponding image paths
         for i in range(len(paths)):
             print(f"Image path: {paths[i]}, Predicted label: {predicted_labels[i]}")
+
+        # TODO: I should learn how to send inference results to CPU to process and store them in a csv file
