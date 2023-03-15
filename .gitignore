@@ -33,6 +33,7 @@ MANIFEST
 # Local files/folders
 .idea
 images
+experiments
 ilsvrc2012_wordnet_lemmas.txt
 imagenet1000_clsidx_to_labels.txt
 *.joblib

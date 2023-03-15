@@ -4,7 +4,7 @@
 
 
 
-## Setup
+## Setup for Linux
 
         $ conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatoolkit=11.3 -c pytorch
         $ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/
@@ -23,6 +23,24 @@
         $ python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
 
 
+## Setup for Apple Silicon
+
+        # Create a conda environment
+        $ conda create -n inference python 3.10
+        $ conda activate inference
+
+        # For TensorFlow
+        $ conda install -c apple tensorflow-deps
+        $ pip install tensorflow-macos
+        $ pip install tensorflow-metal
+
+        # For PyTorch
+        $ conda install pytorch torchvision torchaudio -c pytorch-nightly
+
+*TensorFlow reference --> [link](https://developer.apple.com/metal/tensorflow-plugin/)*
+</br>
+*PyTorch reference --> [link](https://developer.apple.com/metal/pytorch/)*
+
 
 ## Set TensorFlow GPU Consumption
 
@@ -35,6 +53,4 @@
 In my case, without this code block, TensorFlow was using almost all the available resources in the device memory.
 After this code, it decreases the total memory consumption by 1 GB. The next step to limit the memory consumption
 would be write a data loader to load the data optimized to the device.
-
-
 
