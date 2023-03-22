@@ -38,6 +38,8 @@ if args['device'] == 'GPU':
 else:
     device = torch.device("cpu")
 
+print(f"{device} is set for device!")
+
 print("[INFO] MobileNetV3 model is loading ..")
 model = models.mobilenet_v3_small(weights=MobileNet_V3_Small_Weights.DEFAULT).to(device)
 model.eval()
