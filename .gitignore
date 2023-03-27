@@ -39,3 +39,6 @@ imagenet1000_clsidx_to_labels.txt
 *.joblib
 main.py
 *.txt
+*.png
+*.jpg
+*.JPEG
