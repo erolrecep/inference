@@ -54,3 +54,23 @@ In my case, without this code block, TensorFlow was using almost all the availab
 After this code, it decreases the total memory consumption by 1 GB. The next step to limit the memory consumption
 would be write a data loader to load the data optimized to the device.
 
+---
+
+### TO-DO List
+
+ 1. Learn more about grad-cam visualization and it's implementations.
+    + https://github.com/jacobgil/pytorch-grad-cam 
+    + https://pyimagesearch.com/2020/03/09/grad-cam-visualize-class-activation-maps-with-keras-tensorflow-and-deep-learning/ 
+ 2. Learn more about feature maps and filters visualizations --> 
+    + https://machinelearningmastery.com/how-to-visualize-filters-and-feature-maps-in-convolutional-neural-networks/ 
+ 3. Learn more about model pruning
+    + https://pytorch.org/tutorials/intermediate/pruning_tutorial.html 
+ 4. Learn more about model post-training quantization
+    + https://docs.nvidia.com/deeplearning/tensorrt/pytorch-quantization-toolkit/docs/userguide.html 
+    + https://pytorch.org/TensorRT/tutorials/ptq.html 
+    + https://docs.nvidia.com/deeplearning/tensorrt/pytorch-quantization-toolkit/docs/index.html
+ 5. Learn more about NVIDIA TensorRT tool for model quantization
+    + https://docs.nvidia.com/deeplearning/tensorrt/sample-support-guide/index.html#onnx_mnist_sample 
+    + https://developer.nvidia.com/tensorrt 
+    + https://github.com/NVIDIA/TensorRT
+
